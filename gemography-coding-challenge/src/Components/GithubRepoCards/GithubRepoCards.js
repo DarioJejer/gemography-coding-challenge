@@ -1,9 +1,17 @@
 import './GithubRepoCards.css';
+import { useDispatch, useSelector } from "react-redux";
+import { LoadMoreRepos } from '../../redux/reducers/githubReposReducer/githubReposAction';
+import { useEffect } from "react";
 import GithubRepoCard from '../GithubRepoCard/GithubRepoCard';
-import { useSelector } from "react-redux";
-
+import NextPageButton from '../NextPageButton/NextPageButton';
 
 export default function GithubRepoCards() { 
+    
+    const dispatch = useDispatch();
+
+    useEffect(() => {   
+        dispatch(LoadMoreRepos(1));
+    },[]);
     
     const repos = useSelector(state => state.githubReposReducer.githubRepos)
 
@@ -11,6 +19,7 @@ export default function GithubRepoCards() {
         return (
             <div>
                 {repos.map(r => <GithubRepoCard repo={r} key={r.title} />)}
+                <NextPageButton callback={(page)=>{dispatch(LoadMoreRepos(page))}} legend={"Load more repos"}/>
             </div>
         );
     }
