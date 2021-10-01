@@ -11,7 +11,7 @@ export default function NextPageButton({callback, legend}) {
     }
 
     return (
-        <button onClick={handleLoadMoreRepos}>{legend}</button>
+        <button className="next-page-button" onClick={handleLoadMoreRepos}>{legend}</button>
     );
 }
   

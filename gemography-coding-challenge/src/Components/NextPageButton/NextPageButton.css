@@ -1,0 +1,19 @@
+.next-page-button {
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	padding:11px 23px;
+	text-decoration:none;
+}
+.next-page-button:hover {
+	background-color:#6c7c7c;
+}
+.next-page-button:active {
+	position:relative;
+	top:1px;
+}
