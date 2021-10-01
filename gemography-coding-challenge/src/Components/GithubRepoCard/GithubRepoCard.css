@@ -1,0 +1,13 @@
+.box{
+    display: grid;
+    border: 3px solid black;
+    width: 500px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.image-box{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
