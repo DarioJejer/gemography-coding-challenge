@@ -1,12 +1,14 @@
 import './GithubRepoCard.css';
 
-export default function GithubRepoCard() { 
+export default function GithubRepoCard(props) { 
   
+    const {title, description, profileImg} = props;
+    
     return (
         <div className="box">
-            <h3>Title</h3>
-            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png" alt="user-profile" className="image-box" />            
-            <h3>Description</h3>
+            <h3>{title}</h3>
+            <img src={profileImg} alt="user-profile" className="image-box" />            
+            <h3>{description}</h3>
         </div>
     );
   }
