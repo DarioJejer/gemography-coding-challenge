@@ -6,12 +6,12 @@ export default function GithubRepoCard({repo}) {
 
     return (
         <div className="box">
-            <h3>{title}</h3>
+            <span className="card-title">{title}</span>
             <img src={profileImg} alt="user-profile" className="image-box" />            
-            <p>{description}</p>
-            <p>{stars}</p>
-            <p>{issues}</p>
-            <p>{userName}</p>
+            <span className="card-description">{description}</span>
+            <span className="card-stars">Stars: {stars}</span>
+            <span className="card-issues">Issues: {issues}</span>
+            <span className="card-username">Submited last month by {userName}</span>
         </div>
     );
   }

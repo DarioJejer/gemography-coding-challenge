@@ -1,13 +1,85 @@
 .box{
-    width: 500px;
+    width: 50%;
+    height: 150px;
     border: 3px solid black;
     padding: 20px;
+    margin: 40px 0px;
     display: grid;
-    justify-items: center;
+    grid-template-columns: [col-start] 150px [col1] 160px [col2] 150px [col3] auto [col-end];
+    grid-template-rows: [row-start] 50px [row1] 50px [row2] 50px [row-end];  
 }
 
 .image-box{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
+    box-sizing: border-box;
     border: 2px solid black;
+    grid-column-start: col-start;
+    grid-column-end: col1;
+    grid-row-start: row-start;
+    grid-row-end: row-end;
+}
+
+.card-title{
+    margin-left: 20px;
+    align-content: center;
+    grid-column-start: col1;
+    grid-column-end: col-end;
+    grid-row-start: row-start;
+    grid-row-end: row1;
+}
+
+.card-description{    
+    margin-left: 20px;
+    align-content: center;    
+    grid-column-start: col1;
+    grid-column-end: col-end;
+    grid-row-start: row1;
+    grid-row-end: row2;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: initial;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.card-stars{    
+    height: 40px;
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    padding: 5px 0px;
+    margin: 10px 10px 0px 20px;
+    text-align: center;
+    grid-column-start: col1;
+    grid-column-end: col2;
+    grid-row-start: row2;
+    grid-row-end: row-end;
+    font-size: 1rem;
+}
+
+.card-issues{     
+    height: 40px;
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    padding: 5px 0px;
+    margin: 10px 10px 0px 10px;
+    text-align: center;
+    grid-column-start: col2;
+    grid-column-end: col3;
+    grid-row-start: row2;
+    grid-row-end: row-end;
+    font-size: 1rem;
+}
+
+.card-username{     
+    align-self: center;  
+    grid-column-start: col3;
+    grid-column-end: col-end;
+    grid-row-start: row2;
+    grid-row-end: row-end;
+    font-size: 1rem;
 }
