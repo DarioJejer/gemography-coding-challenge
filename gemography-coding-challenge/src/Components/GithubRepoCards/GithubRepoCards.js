@@ -8,26 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 export default function GithubRepoCards() { 
     
     const dispatch = useDispatch();
-
-    const [repos, setRepos] = useState([]);
+    const repos = useSelector(state => state.githubReposReducer.githubRepos)
 
     useEffect(() => {   
-
-        fetchData();
         dispatch(LoadMoreRepos(1));
-        async function fetchData() {
-            let reposData = await fetch("https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc");
-            reposData = await reposData.json();
-            reposData = reposData.items;
-            setRepos(formatReposData(reposData));
-        }
     },[]);
     
-
-    function formatReposData(res) {
-        return res.map(r => {return { title: r.name, description: r.description, profileImg: r.owner.avatar_url }});
-    }
-
     if(repos.length>0){
         return (
             <div>
