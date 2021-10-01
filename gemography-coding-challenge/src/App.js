@@ -3,6 +3,7 @@ import GithubRepoCards from './Components/GithubRepoCards/GithubRepoCards';
 import {useEffect} from "react";
 import { LoadMoreRepos } from './redux/reducers/githubReposReducer/githubReposAction';
 import { useDispatch } from "react-redux";
+import NextPageButton from './Components/NextPageButton/NextPageButton';
 
 function App() {      
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <GithubRepoCards/>
-      <button onClick={handleLoadMoreRepos}>Load more repos</button>
+      <NextPageButton callback={(page)=>{dispatch(LoadMoreRepos(page))}} legend={"Load more repos"}/>
     </div>
   );
 }
