@@ -10,7 +10,7 @@ export default function GithubRepoCards() {
     if(repos.length>0){
         return (
             <div>
-                {repos.map(r => <GithubRepoCard title={r.title} key={r.title} description={r.description} profileImg={r.profileImg}/>)}
+                {repos.map(r => <GithubRepoCard repo={r} key={r.title} />)}
             </div>
         );
     }
