@@ -1,12 +1,11 @@
 import './App.css';
 import GithubRepoCard from './Components/GithubRepoCard/GithubRepoCard';
 
-function App() {
+function App() {      
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <GithubRepoCard/>
-      </header>
+      <GithubRepoCard/>
     </div>
   );
 }
